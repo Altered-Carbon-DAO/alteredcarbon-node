@@ -90,12 +90,12 @@ steps:
       password:
         from_secret: docker_password
       tags:
-        - develop
+        - wasm
     when:
       event:
         - push
       branch:
-        - develop
+        - jhernandez/add-wasm
   - name: trigger
     image: plugins/downstream
     settings:
@@ -264,6 +264,6 @@ node:
   runner: integration
 ---
 kind: signature
-hmac: 18623134b8dd4a0b9a54b9f8800b7d13ac4e640d4854a8538b481573ead9b533
+hmac: 4b54f8ac1a78075993820e3001c641ccf107007684c049e90efc05a73bd8498e
 
 ...
