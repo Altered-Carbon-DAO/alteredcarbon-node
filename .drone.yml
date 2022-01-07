@@ -254,7 +254,7 @@ steps:
 trigger:
   branch:
     - main
-    - jhernandez/add-wasm
+    - jhernandez/add-wasmd
   event:
     - pull_request
     - push
@@ -265,6 +265,6 @@ node:
   runner: integration
 ---
 kind: signature
-hmac: c9544319ae765fc6868ed828ee9a763e49a8ae64619bf8bced8d217e9d7453f1
+hmac: 40673e837525a6094031683a9527ee1fa282d1ecfc796d4fb5125c23692bb903
 
 ...
