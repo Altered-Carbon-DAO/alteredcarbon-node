@@ -95,7 +95,7 @@ steps:
       event:
         - push
       branch:
-        - jhernandez/add-wasm
+        - jhernandez/add-wasmd
   - name: trigger
     image: plugins/downstream
     settings:
@@ -265,6 +265,6 @@ node:
   runner: integration
 ---
 kind: signature
-hmac: 40673e837525a6094031683a9527ee1fa282d1ecfc796d4fb5125c23692bb903
+hmac: 74981a2ce9ea52f44e409917d845d405c0fb7c152a4ac259bce93445c3c0d895
 
 ...
