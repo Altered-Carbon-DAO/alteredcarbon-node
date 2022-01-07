@@ -46,8 +46,8 @@ steps:
         path: /go
     commands:
       - apk add --no-cache ca-certificates build-base git
-      - wget https://github.com/CosmWasm/wasmvm/releases/download/v1.0.0-beta/libwasmvm_muslc.a -O /lib/libwasmvm_muslc.a
-      - sha256sum /lib/libwasmvm_muslc.a | grep 2ea10ad5e489b5ede1aa4061d4afa8b2ddd39718ba7b8689690b9c07a41d678e
+      - wget https://github.com/CosmWasm/wasmvm/releases/download/v1.0.0-beta4/libwasmvm_muslc.a  -O /lib/libwasmvm_muslc.a
+      - sha256sum /lib/libwasmvm_muslc.a | grep bb8bcb7a180b89734872778c1a93c982759118e2e9f08c3f05079f2bf22f8ddb
       - LEDGER_ENABLED=false BUILD_TAGS=muslc make build
     environment:
       GOPROXY: http://goproxy
@@ -265,6 +265,6 @@ node:
   runner: integration
 ---
 kind: signature
-hmac: 74981a2ce9ea52f44e409917d845d405c0fb7c152a4ac259bce93445c3c0d895
+hmac: 8c77560ccb787a2e344718b40384d63c04a76f07ee2074ed2c1b2b41be4c39a6
 
 ...
