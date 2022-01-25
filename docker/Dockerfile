@@ -3,8 +3,8 @@ RUN apk add -U --no-cache ca-certificates
 
 WORKDIR /data
 ENV HOME=/data
-COPY ./bin/starsd /usr/bin/starsd
+COPY ./bin/acarbd /usr/bin/acarbd
 COPY ./docker/entry-point.sh ./entry-point.sh
 EXPOSE 26657
 
-CMD ["starsd", "start", "--pruning", "nothing", "--log_format", "json"]
+CMD ["acarbd", "start", "--pruning", "nothing", "--log_format", "json"]

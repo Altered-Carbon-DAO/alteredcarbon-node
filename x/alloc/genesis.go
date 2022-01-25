@@ -1,9 +1,9 @@
 package alloc
 
 import (
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/alloc/keeper"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/alloc/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/public-awesome/stargaze/v2/x/alloc/keeper"
-	"github.com/public-awesome/stargaze/v2/x/alloc/types"
 )
 
 // InitGenesis initializes the capability module's state from a provided genesis

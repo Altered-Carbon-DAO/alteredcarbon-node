@@ -1,12 +1,12 @@
 syntax = "proto3";
-package publicawesome.stargaze.claim.v1beta1;
+package publicawesome.alteredcarbon.claim.v1beta1;
 
 import "gogoproto/gogo.proto";
 import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";
-import "stargaze/claim/v1beta1/claim_record.proto";
+import "alteredcarbon/claim/v1beta1/claim_record.proto";
 
-option go_package = "github.com/public-awesome/stargaze/x/claim/types";
+option go_package = "github.com/Altered-Carbon-DAO/alteredcarbon-node/x/claim/types";
 
 
 message ClaimAuthorization {

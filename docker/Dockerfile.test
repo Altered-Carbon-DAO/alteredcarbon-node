@@ -2,7 +2,7 @@ FROM alpine:3.14
 RUN apk add -U --no-cache ca-certificates
 
 WORKDIR /root
-COPY ./bin/starsd /usr/bin/starsd
+COPY ./bin/acarbd /usr/bin/acarbd
 COPY ./docker/test-entry-point.sh ./entry-point.sh
 EXPOSE 26657
 

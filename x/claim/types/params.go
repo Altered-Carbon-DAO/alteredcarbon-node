@@ -10,7 +10,7 @@ import (
 )
 
 var (
-	DefaultClaimDenom         = "ustars"
+	DefaultClaimDenom         = "uacarb"
 	DefaultDurationUntilDecay = time.Hour
 	DefaultDurationOfDecay    = time.Hour * 5
 )

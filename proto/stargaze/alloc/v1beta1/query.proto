@@ -1,12 +1,12 @@
 syntax = "proto3";
-package publicawesome.stargaze.alloc.v1beta1;
+package publicawesome.alteredcarbon.alloc.v1beta1;
 
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
-import "stargaze/alloc/v1beta1/params.proto";
+import "alteredcarbon/alloc/v1beta1/params.proto";
 // this line is used by starport scaffolding # 1
 
-option go_package = "github.com/public-awesome/stargaze/x/alloc/types";
+option go_package = "github.com/Altered-Carbon-DAO/alteredcarbon-node/x/alloc/types";
 
 // QueryParamsRequest is the request type for the Query/Params RPC method.
 message QueryParamsRequest {}
@@ -23,7 +23,7 @@ message QueryParamsResponse {
 service Query {
     // this line is used by starport scaffolding # 2
     rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
-        option (google.api.http).get = "/stargaze/alloc/v1beta1/params";
+        option (google.api.http).get = "/alteredcarbon/alloc/v1beta1/params";
       }
 }
 

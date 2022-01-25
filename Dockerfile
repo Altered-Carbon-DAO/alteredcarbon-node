@@ -25,7 +25,7 @@ RUN FAUCET_ENABLED=true LEDGER_ENABLED=false BUILD_TAGS=muslc make build
 # --------------------------------------------------------
 FROM alpine:3.14
 
-COPY --from=go-builder /code/bin/starsd /usr/bin/starsd
+COPY --from=go-builder /code/bin/acarbd /usr/bin/acarbd
 RUN apk add -U --no-cache ca-certificates
 WORKDIR /data
 ENV HOME=/data
@@ -38,4 +38,4 @@ EXPOSE 26656
 EXPOSE 26657
 
 
-CMD ["starsd", "start", "--pruning", "nothing", "--log_format", "json"]
+CMD ["acarbd", "start", "--pruning", "nothing", "--log_format", "json"]

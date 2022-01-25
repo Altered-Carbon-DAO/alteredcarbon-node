@@ -30,5 +30,5 @@ Mgoogle/protobuf/any.proto=github.com/cosmos/cosmos-sdk/codec/types:. \
 done
 
 # move proto files to the right places
-cp -r github.com/public-awesome/stargaze/* ./
+cp -r github.com/Altered-Carbon-DAO/alteredcarbon-node/* ./
 rm -rf github.com

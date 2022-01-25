@@ -3,8 +3,8 @@ package types
 import (
 	"testing"
 
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/testutil/sample"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
-	"github.com/public-awesome/stargaze/v2/testutil/sample"
 	"github.com/stretchr/testify/require"
 )
 

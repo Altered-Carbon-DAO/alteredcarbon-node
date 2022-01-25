@@ -12574,10 +12574,10 @@ paths:
                         }
       tags:
         - Query
-  /stargaze/alloc/v1beta1/params:
+  /alteredcarbon/alloc/v1beta1/params:
     get:
       summary: 'this line is used by starport scaffolding # 2'
-      operationId: PublicawesomeStargazeAllocV1Beta1Params
+      operationId: PublicawesomeAlteredCarbonAllocV1Beta1Params
       responses:
         '200':
           description: A successful response.
@@ -12631,9 +12631,9 @@ paths:
                   additionalProperties: {}
       tags:
         - Query
-  '/stargaze/claim/v1beta1/claim_record/{address}':
+  '/alteredcarbon/claim/v1beta1/claim_record/{address}':
     get:
-      operationId: PublicawesomeStargazeClaimV1Beta1ClaimRecord
+      operationId: PublicawesomeAlteredCarbonClaimV1Beta1ClaimRecord
       responses:
         '200':
           description: A successful response.
@@ -12696,9 +12696,9 @@ paths:
           type: string
       tags:
         - Query
-  '/stargaze/claim/v1beta1/claimable_for_action/{address}/{action}':
+  '/alteredcarbon/claim/v1beta1/claimable_for_action/{address}/{action}':
     get:
-      operationId: PublicawesomeStargazeClaimV1Beta1ClaimableForAction
+      operationId: PublicawesomeAlteredCarbonClaimV1Beta1ClaimableForAction
       responses:
         '200':
           description: A successful response.
@@ -12757,10 +12757,10 @@ paths:
             - ActionDelegateStake
       tags:
         - Query
-  /stargaze/claim/v1beta1/module_account_balance:
+  /alteredcarbon/claim/v1beta1/module_account_balance:
     get:
       summary: 'this line is used by starport scaffolding # 2'
-      operationId: PublicawesomeStargazeClaimV1Beta1ModuleAccountBalance
+      operationId: PublicawesomeAlteredCarbonClaimV1Beta1ModuleAccountBalance
       responses:
         '200':
           description: A successful response.
@@ -12808,9 +12808,9 @@ paths:
                   additionalProperties: {}
       tags:
         - Query
-  /stargaze/claim/v1beta1/params:
+  /alteredcarbon/claim/v1beta1/params:
     get:
-      operationId: PublicawesomeStargazeClaimV1Beta1Params
+      operationId: PublicawesomeAlteredCarbonClaimV1Beta1Params
       responses:
         '200':
           description: A successful response.
@@ -12873,9 +12873,9 @@ paths:
                   additionalProperties: {}
       tags:
         - Query
-  '/stargaze/claim/v1beta1/total_claimable/{address}':
+  '/alteredcarbon/claim/v1beta1/total_claimable/{address}':
     get:
-      operationId: PublicawesomeStargazeClaimV1Beta1TotalClaimable
+      operationId: PublicawesomeAlteredCarbonClaimV1Beta1TotalClaimable
       responses:
         '200':
           description: A successful response.
@@ -20274,19 +20274,19 @@ definitions:
       and
 
       freezing clients
-  publicawesome.stargaze.alloc.v1beta1.DistributionProportions:
+  publicawesome.alteredcarbon.alloc.v1beta1.DistributionProportions:
     type: object
     properties:
       nftIncentives:
         type: string
       developerRewards:
         type: string
-  publicawesome.stargaze.alloc.v1beta1.MsgCreateVestingAccountResponse:
+  publicawesome.alteredcarbon.alloc.v1beta1.MsgCreateVestingAccountResponse:
     type: object
     description: >-
       MsgCreateVestingAccountResponse defines the Msg/CreateVestingAccount
       response type.
-  publicawesome.stargaze.alloc.v1beta1.Params:
+  publicawesome.alteredcarbon.alloc.v1beta1.Params:
     type: object
     properties:
       distributionProportions:
@@ -20307,7 +20307,7 @@ definitions:
             weight:
               type: string
         title: address to receive developer rewards
-  publicawesome.stargaze.alloc.v1beta1.QueryParamsResponse:
+  publicawesome.alteredcarbon.alloc.v1beta1.QueryParamsResponse:
     type: object
     properties:
       params:
@@ -20335,14 +20335,14 @@ definitions:
                   type: string
             title: address to receive developer rewards
     description: QueryParamsResponse is the response type for the Query/Params RPC method.
-  publicawesome.stargaze.alloc.v1beta1.WeightedAddress:
+  publicawesome.alteredcarbon.alloc.v1beta1.WeightedAddress:
     type: object
     properties:
       address:
         type: string
       weight:
         type: string
-  publicawesome.stargaze.claim.v1beta1.Action:
+  publicawesome.alteredcarbon.claim.v1beta1.Action:
     type: string
     enum:
       - ActionInitialClaim
@@ -20351,7 +20351,7 @@ definitions:
       - ActionVote
       - ActionDelegateStake
     default: ActionInitialClaim
-  publicawesome.stargaze.claim.v1beta1.ClaimAuthorization:
+  publicawesome.alteredcarbon.claim.v1beta1.ClaimAuthorization:
     type: object
     properties:
       contractAddress:
@@ -20365,7 +20365,7 @@ definitions:
           - ActionVote
           - ActionDelegateStake
         default: ActionInitialClaim
-  publicawesome.stargaze.claim.v1beta1.ClaimRecord:
+  publicawesome.alteredcarbon.claim.v1beta1.ClaimRecord:
     type: object
     properties:
       address:
@@ -20393,7 +20393,7 @@ definitions:
         title: |-
           true if action is completed
           index of bool in array refers to action enum #
-  publicawesome.stargaze.claim.v1beta1.MsgInitialClaimResponse:
+  publicawesome.alteredcarbon.claim.v1beta1.MsgInitialClaimResponse:
     type: object
     properties:
       claimedAmount:
@@ -20411,7 +20411,7 @@ definitions:
             NOTE: The amount field is an Int which implements the custom method
             signatures required by gogoproto.
         title: total initial claimable amount for the user
-  publicawesome.stargaze.claim.v1beta1.Params:
+  publicawesome.alteredcarbon.claim.v1beta1.Params:
     type: object
     properties:
       airdropEnabled:
@@ -20444,7 +20444,7 @@ definitions:
               default: ActionInitialClaim
         title: list of contracts and their allowed claim actions
     description: Params defines the claim module's parameters.
-  publicawesome.stargaze.claim.v1beta1.QueryClaimRecordResponse:
+  publicawesome.alteredcarbon.claim.v1beta1.QueryClaimRecordResponse:
     type: object
     properties:
       claimRecord:
@@ -20478,7 +20478,7 @@ definitions:
             title: |-
               true if action is completed
               index of bool in array refers to action enum #
-  publicawesome.stargaze.claim.v1beta1.QueryClaimableForActionResponse:
+  publicawesome.alteredcarbon.claim.v1beta1.QueryClaimableForActionResponse:
     type: object
     properties:
       coins:
@@ -20495,7 +20495,7 @@ definitions:
 
             NOTE: The amount field is an Int which implements the custom method
             signatures required by gogoproto.
-  publicawesome.stargaze.claim.v1beta1.QueryModuleAccountBalanceResponse:
+  publicawesome.alteredcarbon.claim.v1beta1.QueryModuleAccountBalanceResponse:
     type: object
     properties:
       moduleAccountBalance:
@@ -20514,7 +20514,7 @@ definitions:
             signatures required by gogoproto.
         description: params defines the parameters of the module.
     description: QueryParamsResponse is the response type for the Query/Params RPC method.
-  publicawesome.stargaze.claim.v1beta1.QueryParamsResponse:
+  publicawesome.alteredcarbon.claim.v1beta1.QueryParamsResponse:
     type: object
     properties:
       params:
@@ -20551,7 +20551,7 @@ definitions:
                   default: ActionInitialClaim
             title: list of contracts and their allowed claim actions
     description: QueryParamsResponse is the response type for the Query/Params RPC method.
-  publicawesome.stargaze.claim.v1beta1.QueryTotalClaimableResponse:
+  publicawesome.alteredcarbon.claim.v1beta1.QueryTotalClaimableResponse:
     type: object
     properties:
       coins:

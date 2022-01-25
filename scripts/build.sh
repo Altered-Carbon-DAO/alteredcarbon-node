@@ -1,1 +1,1 @@
-GOARCH=amd64 GOOS=linux go build -o bin/starsd github.com/public-awesome/stargaze/cmd/starsd
+GOARCH=amd64 GOOS=linux go build -o bin/acarbd github.com/Altered-Carbon-DAO/alteredcarbon-node/cmd/acarbd

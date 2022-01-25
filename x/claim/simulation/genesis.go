@@ -1,8 +1,8 @@
 package simulation
 
 import (
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/claim/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
-	"github.com/public-awesome/stargaze/v2/x/claim/types"
 )
 
 // RandomizedGenState generates a random GenesisState  for claim

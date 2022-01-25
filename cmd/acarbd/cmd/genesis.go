@@ -19,6 +19,7 @@ import (
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	"github.com/cosmos/cosmos-sdk/x/genutil"
 
+	minttypes "github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/mint/types"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 	crisistypes "github.com/cosmos/cosmos-sdk/x/crisis/types"
 	distributiontypes "github.com/cosmos/cosmos-sdk/x/distribution/types"
@@ -27,36 +28,33 @@ import (
 	slashingtypes "github.com/cosmos/cosmos-sdk/x/slashing/types"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 	ibctransfertypes "github.com/cosmos/ibc-go/v2/modules/apps/transfer/types"
-	minttypes "github.com/public-awesome/stargaze/v2/x/mint/types"
 
-	// appParams "github.com/public-awesome/stargaze/app/params"
-	alloctypes "github.com/public-awesome/stargaze/v2/x/alloc/types"
-	claimtypes "github.com/public-awesome/stargaze/v2/x/claim/types"
+	claimtypes "github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/claim/types"
 )
 
 const (
-	HumanCoinUnit       = "stars"
-	BaseCoinUnit        = "ustars"
-	StarsExponent       = 6
-	Bech32PrefixAccAddr = "stars"
+	HumanCoinUnit       = "acarb"
+	BaseCoinUnit        = "uacarb"
+	acarbExponent       = 6
+	Bech32PrefixAccAddr = "acarb"
 )
 
 type Snapshot struct {
-	TotalStarsAirdropAmount sdk.Int                    `json:"total_stars_amount"`
+	TotalacarbAirdropAmount sdk.Int                    `json:"total_acarb_amount"`
 	Accounts                map[string]SnapshotAccount `json:"accounts"`
 }
 
 type SnapshotAccount struct {
-	AtomAddress              string  `json:"atom_address"`
-	OsmoAddress              string  `json:"osmo_address"`
-	RegenAddress             string  `json:"regen_address"`
-	StargazeHubDelegator     bool    `json:"sg_hub_delegator"`
-	StargazeOsmosisDelegator bool    `json:"sg_osmosis_delegator"`
-	StargazeRegenDelegator   bool    `json:"sg_regen_delegator"`
-	AtomStaker               bool    `json:"atom_staker"`
-	OsmoStaker               bool    `json:"osmo_staker"`
-	OsmosisLiquidityProvider bool    `json:"osmosis_lp"`
-	AirdropAmount            sdk.Int `json:"airdrop_amount"`
+	AtomAddress                   string  `json:"atom_address"`
+	OsmoAddress                   string  `json:"osmo_address"`
+	RegenAddress                  string  `json:"regen_address"`
+	AlteredCarbonHubDelegator     bool    `json:"sg_hub_delegator"`
+	AlteredCarbonOsmosisDelegator bool    `json:"sg_osmosis_delegator"`
+	AlteredCarbonRegenDelegator   bool    `json:"sg_regen_delegator"`
+	AtomStaker                    bool    `json:"atom_staker"`
+	OsmoStaker                    bool    `json:"osmo_staker"`
+	OsmosisLiquidityProvider      bool    `json:"osmosis_lp"`
+	AirdropAmount                 sdk.Int `json:"airdrop_amount"`
 }
 
 type GenesisParams struct {
@@ -77,7 +75,6 @@ type GenesisParams struct {
 
 	SlashingParams slashingtypes.Params
 
-	AllocParams alloctypes.Params
 	ClaimParams claimtypes.Params
 	MintParams  minttypes.Params
 }
@@ -91,9 +88,9 @@ Examples include:
 	- Setting module initial params
 	- Setting denom metadata
 Example:
-	starsd prepare-genesis mainnet stargaze-1 snapshot.json
+	acarbd prepare-genesis mainnet alteredcarbon-1 snapshot.json
 	- Check input genesis:
-		file is at ~/.starsd/config/genesis.json
+		file is at ~/.acarbd/config/genesis.json
 `,
 		Args: cobra.ExactArgs(3),
 		RunE: func(cmd *cobra.Command, args []string) error {
@@ -329,15 +326,6 @@ func PrepareGenesis(
 	}
 	appState[banktypes.ModuleName] = bankGenStateBz
 
-	// alloc module genesis
-	allocGenState := alloctypes.GetGenesisStateFromAppState(cdc, appState)
-	allocGenState.Params = genesisParams.AllocParams
-	allocGenStateBz, err := cdc.MarshalJSON(allocGenState)
-	if err != nil {
-		return nil, nil, fmt.Errorf("failed to marshal alloc genesis state: %w", err)
-	}
-	appState[alloctypes.ModuleName] = allocGenStateBz
-
 	return appState, genDoc, nil
 }
 
@@ -345,12 +333,12 @@ func PrepareGenesis(
 func MainnetGenesisParams() GenesisParams {
 	genParams := GenesisParams{}
 
-	genParams.AirdropSupply = sdk.NewInt(250_000_000_000_000)              // 250M STARS
-	genParams.GenesisTime = time.Date(2021, 10, 29, 17, 0, 0, 0, time.UTC) // Oct 29, 2021 - 17:00 UTC
+	genParams.AirdropSupply = sdk.NewInt(250_000_000_000_000) // 250M acarb
+	genParams.GenesisTime =  time.Date(2022, 01, 02, 17, 0, 0, 0, time.UTC) //
 
 	genParams.NativeCoinMetadatas = []banktypes.Metadata{
 		{
-			Description: "The native token of Stargaze",
+			Description: "The native token of Altered Carbon",
 			DenomUnits: []*banktypes.DenomUnit{
 				{
 					Denom:    BaseCoinUnit,
@@ -359,39 +347,14 @@ func MainnetGenesisParams() GenesisParams {
 				},
 				{
 					Denom:    HumanCoinUnit,
-					Exponent: StarsExponent,
+					Exponent: acarbExponent,
 					Aliases:  nil,
 				},
 			},
-			Name:    "Stargaze STARS",
+			Name:    "AlteredCarbon acarb",
 			Base:    BaseCoinUnit,
 			Display: HumanCoinUnit,
-			Symbol:  "STARS",
-		},
-	}
-
-	// alloc
-	genParams.AllocParams = alloctypes.DefaultParams()
-	genParams.AllocParams.DistributionProportions = alloctypes.DistributionProportions{
-		NftIncentives:    sdk.NewDecWithPrec(45, 2), // 45%
-		DeveloperRewards: sdk.NewDecWithPrec(15, 2), // 15%
-	}
-	genParams.AllocParams.WeightedDeveloperRewardsReceivers = []alloctypes.WeightedAddress{
-		{
-			Address: "stars1xqz6xujjyz0r9uzn7srasle5uynmpa0zkjr5l8",
-			Weight:  sdk.NewDecWithPrec(33, 2),
-		},
-		{
-			Address: "stars15gp36gk6jvfupy8rc4segppa38lhm3helm5f8k",
-			Weight:  sdk.NewDecWithPrec(67, 2).Mul(sdk.NewDecWithPrec(40, 2)),
-		},
-		{
-			Address: "stars168efxgnh55vcgx83x90pw2fves9anw8kmnlsf5",
-			Weight:  sdk.NewDecWithPrec(67, 2).Mul(sdk.NewDecWithPrec(30, 2)),
-		},
-		{
-			Address: "stars139a4n6w6dhwv60dj2clgwm6r0q84gju28z9at0",
-			Weight:  sdk.NewDecWithPrec(67, 2).Mul(sdk.NewDecWithPrec(30, 2)),
+			Symbol:  "acarb",
 		},
 	}
 
@@ -410,7 +373,7 @@ func MainnetGenesisParams() GenesisParams {
 	// MinCommissionRate is enforced in ante-handler
 
 	genParams.DistributionParams = distributiontypes.DefaultParams()
-	// [TODO] update these due to alloc module taking up funds?
+
 	genParams.DistributionParams.BaseProposerReward = sdk.MustNewDecFromStr("0.01")
 	genParams.DistributionParams.BonusProposerReward = sdk.MustNewDecFromStr("0.04")
 	genParams.DistributionParams.CommunityTax = sdk.MustNewDecFromStr("0.05")
@@ -422,7 +385,7 @@ func MainnetGenesisParams() GenesisParams {
 		genParams.NativeCoinMetadatas[0].Base,
 		sdk.NewInt(1_000_000_000),
 	))
-	genParams.GovParams.TallyParams.Quorum = sdk.MustNewDecFromStr("0.2") // 20%
+	genParams.GovParams.TallyParams.Quorum = sdk.MustNewDecFromStr("0.3") // 30%
 	genParams.GovParams.VotingParams.VotingPeriod = time.Hour * 24 * 3    // 3 days
 
 	genParams.CrisisConstantFee = sdk.NewCoin(
@@ -459,7 +422,7 @@ func MainnetGenesisParams() GenesisParams {
 func TestnetGenesisParams() GenesisParams {
 	genParams := MainnetGenesisParams()
 
-	genParams.AirdropSupply = sdk.NewInt(250_000_000_000_000) // 250M STARS
+	genParams.AirdropSupply = sdk.NewInt(250_000_000_000_000) // 250M acarb
 	genParams.GenesisTime = time.Now()
 
 	// mint
@@ -479,7 +442,7 @@ func TestnetGenesisParams() GenesisParams {
 func DevnetGenesisParams() GenesisParams {
 	genParams := MainnetGenesisParams()
 
-	genParams.AirdropSupply = sdk.NewInt(250_000_000_000_000) // 250M STARS
+	genParams.AirdropSupply = sdk.NewInt(250_000_000_000_000) // 250M acarb
 	genParams.GenesisTime = time.Now()
 	genParams.ClaimParams.AirdropEnabled = true
 	genParams.ClaimParams.AirdropStartTime = genParams.GenesisTime
@@ -501,7 +464,7 @@ func DevnetGenesisParams() GenesisParams {
 func LocalnetGenesisParams() GenesisParams {
 	genParams := MainnetGenesisParams()
 
-	genParams.AirdropSupply = sdk.NewInt(250_000_000_000_000) // 250M STARS
+	genParams.AirdropSupply = sdk.NewInt(250_000_000_000_000) // 250M acarb
 	genParams.GenesisTime = time.Now()
 	genParams.ClaimParams.AirdropEnabled = true
 	genParams.ClaimParams.AirdropStartTime = genParams.GenesisTime

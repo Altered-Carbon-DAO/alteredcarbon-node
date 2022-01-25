@@ -1,7 +1,7 @@
 package keeper
 
 import (
-	"github.com/public-awesome/stargaze/v2/x/alloc/types"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/alloc/types"
 )
 
 type msgServer struct {

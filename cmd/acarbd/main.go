@@ -3,21 +3,21 @@ package main
 import (
 	"os"
 
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/app"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/cmd/acarbd/cmd"
 	svrcmd "github.com/cosmos/cosmos-sdk/server/cmd"
-	"github.com/public-awesome/stargaze/v2/app"
-	"github.com/public-awesome/stargaze/v2/cmd/starsd/cmd"
 	"github.com/tendermint/spm/cosmoscmd"
 	tmcmds "github.com/tendermint/tendermint/cmd/tendermint/commands"
 )
 
 func main() {
 	rootCmd, _ := cosmoscmd.NewRootCmd(
-		"stars",
+		"acarb",
 		app.AccountAddressPrefix,
 		app.DefaultNodeHome,
 		app.Name,
 		app.ModuleBasics,
-		app.NewStargazeApp,
+		app.NewAlteredCarbonApp,
 		cosmoscmd.AddSubCmd(cmd.TestnetCmd(app.ModuleBasics)),
 		cosmoscmd.AddCustomInitCmd(cmd.InitCmd(app.ModuleBasics, app.DefaultNodeHome)),
 		cosmoscmd.AddSubCmd(cmd.PrepareGenesisCmd(app.DefaultNodeHome, app.ModuleBasics)),

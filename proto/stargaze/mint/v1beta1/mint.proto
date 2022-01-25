@@ -1,7 +1,7 @@
 syntax = "proto3";
-package stargaze.mint.v1beta1;
+package alteredcarbon.mint.v1beta1;
 
-option go_package = "github.com/public-awesome/stargaze/x/mint/types";
+option go_package = "github.com/Altered-Carbon-DAO/alteredcarbon-node/x/mint/types";
 
 import "gogoproto/gogo.proto";
 import "google/protobuf/timestamp.proto";

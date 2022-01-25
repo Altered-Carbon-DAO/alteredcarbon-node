@@ -3,7 +3,7 @@ package types_test
 import (
 	"testing"
 
-	"github.com/public-awesome/stargaze/v2/x/alloc/types"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/alloc/types"
 	"github.com/stretchr/testify/require"
 )
 

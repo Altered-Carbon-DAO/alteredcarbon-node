@@ -1,14 +1,14 @@
 syntax = "proto3";
-package publicawesome.stargaze.claim.v1beta1;
+package publicawesome.alteredcarbon.claim.v1beta1;
 
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
 import "cosmos/base/v1beta1/coin.proto";
-import "stargaze/claim/v1beta1/claim_record.proto";
-import "stargaze/claim/v1beta1/params.proto";
+import "alteredcarbon/claim/v1beta1/claim_record.proto";
+import "alteredcarbon/claim/v1beta1/params.proto";
 // this line is used by starport scaffolding # 1
 
-option go_package = "github.com/public-awesome/stargaze/x/claim/types";
+option go_package = "github.com/Altered-Carbon-DAO/alteredcarbon-node/x/claim/types";
 
 
 
@@ -18,24 +18,24 @@ service Query {
     rpc ModuleAccountBalance(QueryModuleAccountBalanceRequest)
         returns (QueryModuleAccountBalanceResponse) {
       option (google.api.http).get =
-          "/stargaze/claim/v1beta1/module_account_balance";
+          "/alteredcarbon/claim/v1beta1/module_account_balance";
     }
     rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
-      option (google.api.http).get = "/stargaze/claim/v1beta1/params";
+      option (google.api.http).get = "/alteredcarbon/claim/v1beta1/params";
     }
     rpc ClaimRecord(QueryClaimRecordRequest) returns (QueryClaimRecordResponse) {
       option (google.api.http).get =
-          "/stargaze/claim/v1beta1/claim_record/{address}";
+          "/alteredcarbon/claim/v1beta1/claim_record/{address}";
     }
     rpc ClaimableForAction(QueryClaimableForActionRequest)
         returns (QueryClaimableForActionResponse) {
       option (google.api.http).get =
-          "/stargaze/claim/v1beta1/claimable_for_action/{address}/{action}";
+          "/alteredcarbon/claim/v1beta1/claimable_for_action/{address}/{action}";
     }
     rpc TotalClaimable(QueryTotalClaimableRequest)
         returns (QueryTotalClaimableResponse) {
       option (google.api.http).get =
-          "/stargaze/claim/v1beta1/total_claimable/{address}";
+          "/alteredcarbon/claim/v1beta1/total_claimable/{address}";
     }
   }
   // this line is used by starport scaffolding # 3

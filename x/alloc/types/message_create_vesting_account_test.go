@@ -5,9 +5,9 @@ import (
 	"testing"
 	"time"
 
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/testutil/sample"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
-	"github.com/public-awesome/stargaze/v2/testutil/sample"
 	"github.com/stretchr/testify/require"
 )
 
@@ -57,7 +57,7 @@ func TestMsgCreateVestingAccount_ValidateBasic(t *testing.T) {
 			},
 			err: sdkerrors.ErrInvalidRequest,
 		}, {
-			name: "star time < end time",
+			name: "start time < end time",
 			msg: MsgCreateVestingAccount{
 				FromAddress: sample.AccAddress(),
 				ToAddress:   sample.AccAddress(),

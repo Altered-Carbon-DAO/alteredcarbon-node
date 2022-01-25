@@ -22,16 +22,16 @@ filter = false
 tx_confirmation = true
 
 [[chains]]
-id = 'stargaze'
-rpc_addr = 'http://stargaze-upgraded:26657'
-grpc_addr = 'http://stargaze-upgraded:9090'
-websocket_addr = 'ws://stargaze-upgraded:26657/websocket'
+id = 'alteredcarbon'
+rpc_addr = 'http://alteredcarbon-upgraded:26657'
+grpc_addr = 'http://alteredcarbon-upgraded:9090'
+websocket_addr = 'ws://alteredcarbon-upgraded:26657/websocket'
 rpc_timeout = '10s'
-account_prefix = 'stars'
+account_prefix = 'acarb'
 key_name = 'relayer'
 store_prefix = 'ibc'
 max_gas = 2000000
-gas_price = { price = 0.025, denom = 'ustars' }
+gas_price = { price = 0.025, denom = 'uacarb' }
 gas_adjustment = 0.1
 clock_drift = '300s'
 trusting_period = '2days'

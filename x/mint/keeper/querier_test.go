@@ -7,9 +7,9 @@ import (
 
 	"github.com/stretchr/testify/require"
 
+	keep "github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/mint/keeper"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/mint/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	keep "github.com/public-awesome/stargaze/v2/x/mint/keeper"
-	"github.com/public-awesome/stargaze/v2/x/mint/types"
 
 	abci "github.com/tendermint/tendermint/abci/types"
 )

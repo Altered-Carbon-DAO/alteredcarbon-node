@@ -1,9 +1,9 @@
-# Stargaze
+# AlteredCarbon
 
-[![Build Status](https://ci.publicawesome.com/api/badges/public-awesome/stargaze/status.svg)](https://ci.publicawesome.com/public-awesome/stargaze)
-[![Go Report Card](https://goreportcard.com/badge/github.com/public-awesome/stargaze)](https://goreportcard.com/report/github.com/public-awesome/stargaze)
+[![Build Status](https://ci.publicawesome.com/api/badges/Altered-Carbon-DAO/alteredcarbon-node/status.svg)](https://ci.publicawesome.com/Altered-Carbon-DAO/alteredcarbon-node)
+[![Go Report Card](https://goreportcard.com/badge/github.com/Altered-Carbon-DAO/alteredcarbon-node)](https://goreportcard.com/report/github.com/Altered-Carbon-DAO/alteredcarbon-node)
 
-Stargaze is a [Cosmos](https://cosmos.network) zone (layer 1 proof-of-stake blockchain). It is the base layer node software for the Stargaze NFT Marketplace.
+AlteredCarbon is a [Cosmos](https://cosmos.network) zone (layer 1 proof-of-stake blockchain). It is the base layer node software for the AlteredCarbon NFT Marketplace.
 
 ## Install
 

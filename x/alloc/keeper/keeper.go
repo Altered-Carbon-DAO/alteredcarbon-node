@@ -5,11 +5,11 @@ import (
 
 	"github.com/tendermint/tendermint/libs/log"
 
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/alloc/types"
 	"github.com/cosmos/cosmos-sdk/codec"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	paramtypes "github.com/cosmos/cosmos-sdk/x/params/types"
-	"github.com/public-awesome/stargaze/v2/x/alloc/types"
 )
 
 type (
@@ -112,7 +112,7 @@ func (k Keeper) GetProportions(ctx sdk.Context, mintedCoin sdk.Coin, ratio sdk.D
 
 func (k Keeper) FundCommunityPool(ctx sdk.Context) error {
 	// If this account exists and has coins, fund the community pool
-	funder, err := sdk.AccAddressFromHex("8CEF4A78C2225BBD62040BCD0FF0B12FFD48C1BF") // stars13nh557xzyfdm6csyp0xslu939l753sdlgdc2q0
+	funder, err := sdk.AccAddressFromHex("8CEF4A78C2225BBD62040BCD0FF0B12FFD48C1BF") // acarb13nh557xzyfdm6csyp0xslu939l753sdlgdc2q0
 	if err != nil {
 		panic(err)
 	}

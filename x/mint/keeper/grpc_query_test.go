@@ -7,10 +7,10 @@ import (
 	"github.com/stretchr/testify/suite"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/app"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/mint/types"
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/public-awesome/stargaze/v2/app"
-	"github.com/public-awesome/stargaze/v2/x/mint/types"
 )
 
 type MintTestSuite struct {

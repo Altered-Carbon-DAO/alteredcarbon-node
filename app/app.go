@@ -76,9 +76,9 @@ import (
 	ibchost "github.com/cosmos/ibc-go/v2/modules/core/24-host"
 	ibckeeper "github.com/cosmos/ibc-go/v2/modules/core/keeper"
 
-	"github.com/public-awesome/stargaze/v2/x/mint"
-	mintkeeper "github.com/public-awesome/stargaze/v2/x/mint/keeper"
-	minttypes "github.com/public-awesome/stargaze/v2/x/mint/types"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/mint"
+	mintkeeper "github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/mint/keeper"
+	minttypes "github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/mint/types"
 	"github.com/spf13/cast"
 	abci "github.com/tendermint/tendermint/abci/types"
 	tmjson "github.com/tendermint/tendermint/libs/json"
@@ -93,19 +93,19 @@ import (
 	"github.com/tendermint/spm/cosmoscmd"
 	"github.com/tendermint/spm/openapiconsole"
 
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/docs"
+	allocmodule "github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/alloc"
+	allocmodulekeeper "github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/alloc/keeper"
+	allocmoduletypes "github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/alloc/types"
+	claimmodule "github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/claim"
+	claimmodulekeeper "github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/claim/keeper"
+	claimmoduletypes "github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/claim/types"
 	vestingtypes "github.com/cosmos/cosmos-sdk/x/auth/vesting/types"
-	"github.com/public-awesome/stargaze/v2/docs"
-	allocmodule "github.com/public-awesome/stargaze/v2/x/alloc"
-	allocmodulekeeper "github.com/public-awesome/stargaze/v2/x/alloc/keeper"
-	allocmoduletypes "github.com/public-awesome/stargaze/v2/x/alloc/types"
-	claimmodule "github.com/public-awesome/stargaze/v2/x/claim"
-	claimmodulekeeper "github.com/public-awesome/stargaze/v2/x/claim/keeper"
-	claimmoduletypes "github.com/public-awesome/stargaze/v2/x/claim/types"
 )
 
 const (
-	AccountAddressPrefix = "stars"
-	Name                 = "stargaze"
+	AccountAddressPrefix = "acarb"
+	Name                 = "alteredcarbon"
 )
 
 // this line is used by starport scaffolding # stargate/wasm/app/enabledProposals
@@ -183,7 +183,7 @@ func init() {
 		panic(err)
 	}
 
-	DefaultNodeHome = filepath.Join(userHomeDir, ".starsd")
+	DefaultNodeHome = filepath.Join(userHomeDir, ".acarbd")
 }
 
 // App extends an ABCI application, but with most of its parameters exported.
@@ -234,8 +234,8 @@ type App struct {
 	mm *module.Manager
 }
 
-// NewStargazeApp returns a reference to an initialized Gaia.
-func NewStargazeApp(
+// NewAlteredCarbonApp returns a reference to an initialized Gaia.
+func NewAlteredCarbonApp(
 	logger log.Logger,
 	db dbm.DB,
 	traceStore io.Writer,

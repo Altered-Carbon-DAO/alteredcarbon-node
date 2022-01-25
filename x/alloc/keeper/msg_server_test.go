@@ -5,9 +5,9 @@ package keeper_test
 // 	"testing"
 
 // 	sdk "github.com/cosmos/cosmos-sdk/types"
-// 	keepertest "github.com/public-awesome/stargaze/testutil/keeper"
-// 	"github.com/public-awesome/stargaze/x/alloc/keeper"
-// 	"github.com/public-awesome/stargaze/x/alloc/types"
+// 	keepertest "github.com/Altered-Carbon-DAO/alteredcarbon-node/testutil/keeper"
+// 	"github.com/Altered-Carbon-DAO/alteredcarbon-node/x/alloc/keeper"
+// 	"github.com/Altered-Carbon-DAO/alteredcarbon-node/x/alloc/types"
 // )
 
 // func setupMsgServer(t testing.TB) (types.MsgServer, context.Context) {

@@ -5,9 +5,9 @@ import (
 
 	"github.com/spf13/cobra"
 
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/mint/types"
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/flags"
-	"github.com/public-awesome/stargaze/v2/x/mint/types"
 )
 
 // GetQueryCmd returns the cli query commands for the minting module.

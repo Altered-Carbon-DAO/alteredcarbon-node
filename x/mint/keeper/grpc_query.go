@@ -3,8 +3,8 @@ package keeper
 import (
 	"context"
 
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/mint/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/public-awesome/stargaze/v2/x/mint/types"
 )
 
 var _ types.QueryServer = Keeper{}

@@ -5,10 +5,10 @@ import (
 
 	"github.com/tendermint/tendermint/libs/log"
 
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/claim/types"
 	"github.com/cosmos/cosmos-sdk/codec"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	paramtypes "github.com/cosmos/cosmos-sdk/x/params/types"
-	"github.com/public-awesome/stargaze/v2/x/claim/types"
 )
 
 type (

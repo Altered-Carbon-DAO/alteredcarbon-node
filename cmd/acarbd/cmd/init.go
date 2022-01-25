@@ -87,12 +87,12 @@ func InitCmd(mbm module.BasicManager, defaultNodeHome string) *cobra.Command {
 			seeds := []string{}
 
 			// pre-fill seeds for mainnet
-			if chainID == "stargaze-1" {
+			if chainID == "alteredcarbon-1" {
 				seeds = []string{
 					"70ed826888f102c7c1ceb4d07287956628a53508@174.138.124.7:36656",
 					"722079345d941cd2da3daedea548c909d9b83ec5@104.248.101.113:36656",
 					"d5fc4f479c4e212c96dff5704bb2468ea03b8ae3@sg-seed.blockpane.com:26656",
-					"babc3f3f7804933265ec9c40ad94f4da8e9e0017@stargaze.seed.rhinostake.com:16656",
+					"babc3f3f7804933265ec9c40ad94f4da8e9e0017@alteredcarbon.seed.rhinostake.com:16656",
 				}
 			}
 

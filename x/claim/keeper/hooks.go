@@ -1,10 +1,10 @@
 package keeper
 
 import (
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/claim/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	govtypes "github.com/cosmos/cosmos-sdk/x/gov/types"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
-	"github.com/public-awesome/stargaze/v2/x/claim/types"
 )
 
 func (k Keeper) AfterProposalVote(ctx sdk.Context, proposalID uint64, voterAddr sdk.AccAddress) {

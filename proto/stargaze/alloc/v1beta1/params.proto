@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package publicawesome.stargaze.alloc.v1beta1;
+package publicawesome.alteredcarbon.alloc.v1beta1;
 
-option go_package = "github.com/public-awesome/stargaze/x/alloc/types";
+option go_package = "github.com/Altered-Carbon-DAO/alteredcarbon-node/x/alloc/types";
 
 import "gogoproto/gogo.proto";
 

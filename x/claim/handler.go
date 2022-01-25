@@ -3,10 +3,10 @@ package claim
 import (
 	"fmt"
 
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/claim/keeper"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/claim/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
-	"github.com/public-awesome/stargaze/v2/x/claim/keeper"
-	"github.com/public-awesome/stargaze/v2/x/claim/types"
 )
 
 // NewHandler ...

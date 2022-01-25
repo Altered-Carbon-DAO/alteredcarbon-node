@@ -4,13 +4,13 @@ import (
 	"testing"
 	"time"
 
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/app"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/testutil/simapp"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/alloc/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	bankkeeper "github.com/cosmos/cosmos-sdk/x/bank/keeper"
 	minttypes "github.com/cosmos/cosmos-sdk/x/mint/types"
-	"github.com/public-awesome/stargaze/v2/app"
-	"github.com/public-awesome/stargaze/v2/testutil/simapp"
-	"github.com/public-awesome/stargaze/v2/x/alloc/types"
 	"github.com/stretchr/testify/suite"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 )
@@ -23,7 +23,7 @@ type KeeperTestSuite struct {
 
 func (suite *KeeperTestSuite) SetupTest() {
 	suite.app = simapp.New(suite.T().TempDir())
-	suite.ctx = suite.app.BaseApp.NewContext(false, tmproto.Header{Height: 1, ChainID: "stargaze-1", Time: time.Now().UTC()})
+	suite.ctx = suite.app.BaseApp.NewContext(false, tmproto.Header{Height: 1, ChainID: "alteredcarbon-1", Time: time.Now().UTC()})
 	suite.app.AllocKeeper.SetParams(suite.ctx, types.DefaultParams())
 
 }

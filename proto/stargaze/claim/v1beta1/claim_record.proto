@@ -1,11 +1,11 @@
 syntax = "proto3";
-package publicawesome.stargaze.claim.v1beta1;
+package publicawesome.alteredcarbon.claim.v1beta1;
 
 
 import "gogoproto/gogo.proto";
 import "cosmos/base/v1beta1/coin.proto";
 
-option go_package = "github.com/public-awesome/stargaze/x/claim/types";
+option go_package = "github.com/Altered-Carbon-DAO/alteredcarbon-node/x/claim/types";
 
 enum Action {
   option (gogoproto.goproto_enum_prefix) = false;

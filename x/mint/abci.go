@@ -3,10 +3,10 @@ package mint
 import (
 	"time"
 
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/mint/keeper"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/mint/types"
 	"github.com/cosmos/cosmos-sdk/telemetry"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/public-awesome/stargaze/v2/x/mint/keeper"
-	"github.com/public-awesome/stargaze/v2/x/mint/types"
 )
 
 // BeginBlocker mints new tokens for the previous block.

@@ -1,9 +1,9 @@
 package mint
 
 import (
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/mint/keeper"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/mint/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/public-awesome/stargaze/v2/x/mint/keeper"
-	"github.com/public-awesome/stargaze/v2/x/mint/types"
 )
 
 // InitGenesis new mint genesis

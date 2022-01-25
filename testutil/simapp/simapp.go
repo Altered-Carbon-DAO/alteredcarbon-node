@@ -12,7 +12,7 @@ import (
 	tmtypes "github.com/tendermint/tendermint/types"
 	tmdb "github.com/tendermint/tm-db"
 
-	"github.com/public-awesome/stargaze/v2/app"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/app"
 )
 
 // New creates application instance with in-memory database and disabled logging.
@@ -22,7 +22,7 @@ func New(dir string) *app.App {
 
 	encoding := cosmoscmd.MakeEncodingConfig(app.ModuleBasics)
 
-	a := app.NewStargazeApp(logger, db, nil, true, map[int64]bool{}, dir, 0, encoding,
+	a := app.NewAlteredCarbonApp(logger, db, nil, true, map[int64]bool{}, dir, 0, encoding,
 		simapp.EmptyAppOptions{})
 
 	stateBytes, err := json.MarshalIndent(app.ModuleBasics.DefaultGenesis(encoding.Marshaler), "", " ")

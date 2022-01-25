@@ -18,7 +18,7 @@ import (
 	tmrand "github.com/tendermint/tendermint/libs/rand"
 	tmdb "github.com/tendermint/tm-db"
 
-	"github.com/public-awesome/stargaze/v2/app"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/app"
 )
 
 type (
@@ -54,7 +54,7 @@ func DefaultConfig() network.Config {
 		InterfaceRegistry: encoding.InterfaceRegistry,
 		AccountRetriever:  authtypes.AccountRetriever{},
 		AppConstructor: func(val network.Validator) servertypes.Application {
-			return app.NewStargazeApp(
+			return app.NewAlteredCarbonApp(
 				val.Ctx.Logger, tmdb.NewMemDB(), nil, true, map[int64]bool{}, val.Ctx.Config.RootDir, 0,
 				encoding,
 				simapp.EmptyAppOptions{},

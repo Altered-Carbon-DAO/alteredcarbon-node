@@ -1,4 +1,4 @@
-module github.com/public-awesome/stargaze/v2
+module github.com/Altered-Carbon-DAO/alteredcarbon-node/v2
 
 go 1.17
 
@@ -123,6 +123,6 @@ replace (
 	github.com/gin-gonic/gin => github.com/gin-gonic/gin v1.7.0
 	github.com/gogo/protobuf => github.com/regen-network/protobuf v1.3.3-alpha.regen.1
 	github.com/tecbot/gorocksdb => github.com/cosmos/gorocksdb v1.2.0
-	github.com/tendermint/spm => github.com/public-awesome/spm v0.1.9-stargaze.0.20220120194320-92da222110ff
+	github.com/tendermint/spm => github.com/public-awesome/spm v0.1.9-alteredcarbon.0.20220120194320-92da222110ff
 	google.golang.org/grpc => google.golang.org/grpc v1.33.2
 )

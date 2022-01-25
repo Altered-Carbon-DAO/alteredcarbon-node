@@ -13,12 +13,12 @@ import (
 	"text/template"
 	"time"
 
+	claimtypes "github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/claim/types"
+	minttypes "github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/mint/types"
 	"github.com/cosmos/cosmos-sdk/codec"
 	"github.com/cosmos/cosmos-sdk/testutil"
 	crisistypes "github.com/cosmos/cosmos-sdk/x/crisis/types"
 	govtypes "github.com/cosmos/cosmos-sdk/x/gov/types"
-	claimtypes "github.com/public-awesome/stargaze/v2/x/claim/types"
-	minttypes "github.com/public-awesome/stargaze/v2/x/mint/types"
 	"github.com/spf13/cobra"
 	tmconfig "github.com/tendermint/tendermint/config"
 	tmos "github.com/tendermint/tendermint/libs/os"
@@ -55,7 +55,7 @@ var (
 	flagInitialCoins         = "coins"
 	flagInitialStakingAmount = "initial-staking-amount"
 
-	defaultBondDenom = "ustarx"
+	defaultBondDenom = "uacarb"
 )
 
 // get cmd to initialize all files for tendermint testnet and application
@@ -99,7 +99,7 @@ Example:
 	cmd.Flags().Int(flagNumValidators, 4, "Number of validators to initialize the testnet with")
 	cmd.Flags().StringP(flagOutputDir, "o", "./mytestnet", "Directory to store initialization data for the testnet")
 	cmd.Flags().String(flagNodeDirPrefix, "node", "Prefix the directory name for each node with (node results in node0, node1, ...)")
-	cmd.Flags().String(flagNodeDaemonHome, "starsd", "Home directory of the node's daemon configuration")
+	cmd.Flags().String(flagNodeDaemonHome, "acarbd", "Home directory of the node's daemon configuration")
 	cmd.Flags().String(flagStartingIPAddress, "192.168.0.1", "Starting IP address (192.168.0.1 results in persistent peers list ID0@192.168.0.1:46656, ID1@192.168.0.2:46656, ...)")
 	cmd.Flags().String(flags.FlagChainID, "", "genesis file chain-id, if left blank will be randomly created")
 	cmd.Flags().String(server.FlagMinGasPrices, fmt.Sprintf("0.000006%s", defaultBondDenom), "Minimum gas prices to accept for transactions; All fees in a tx must meet this minimum (e.g. 0.01photino,0.001stake)")
@@ -109,7 +109,7 @@ Example:
 	cmd.Flags().Int64(flagInitialStakingAmount, 100000000,
 		"Flag initial staking amount: 100000000")
 	cmd.Flags().String(flagInitialCoins, fmt.Sprintf("1000000000%s", defaultBondDenom),
-		"Validator genesis coins: 100000ustarx")
+		"Validator genesis coins: 100000uacarb")
 	cmd.Flags().String(flagDockerTag, "latest", "docker tag for testnet command")
 	cmd.Flags().String(flagUnbondingPeriod, "72h", "app's unbonding period")
 
@@ -449,18 +449,18 @@ type TestnetNode struct {
 	GRPCPort         string
 }
 
-const dockerComposeDefinition = `# Stargaze Testnet
+const dockerComposeDefinition = `# AlteredCarbon Testnet
 version: '3.1'
 services:{{range $node := .Nodes }}
 	{{ $node.Name }}:
-		image: publicawesome/stargaze:{{ $.Tag }}
+		image: publicawesome/alteredcarbon:{{ $.Tag }}
 		restart: always
 		ports:
 			- {{ $node.OutsidePortRange}}:{{ $node.InsidePortRange}}
 			- {{ $node.APIPort}}:1317
 			- {{ $node.GRPCPort}}:9090
 		volumes:
-			- ./{{$node.Name}}/starsd:/data/.starsd/
+			- ./{{$node.Name}}/acarbd:/data/.acarbd/
 {{end}}
 `
 

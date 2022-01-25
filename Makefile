@@ -10,7 +10,7 @@ TM_VERSION := $(shell go list -m github.com/tendermint/tendermint | sed 's:.* ::
 BUILDDIR ?= $(CURDIR)/build
 DOCKER := $(shell which docker)
 POST_ID ?= 1
-STAKE_DENOM ?= ustarx
+STAKE_DENOM ?= uacarb
 
 export GO111MODULE = on
 
@@ -54,8 +54,8 @@ build_tags_comma_sep := $(subst $(whitespace),$(comma),$(build_tags))
 
 # process linker flags
 
-ldflags = -X github.com/cosmos/cosmos-sdk/version.Name=stargaze \
-		  -X github.com/cosmos/cosmos-sdk/version.AppName=starsd \
+ldflags = -X github.com/cosmos/cosmos-sdk/version.Name=alteredcarbon \
+		  -X github.com/cosmos/cosmos-sdk/version.AppName=acarbd \
 		  -X github.com/cosmos/cosmos-sdk/version.Version=$(VERSION) \
 		  -X github.com/cosmos/cosmos-sdk/version.Commit=$(COMMIT) \
 		  -X "github.com/cosmos/cosmos-sdk/version.BuildTags=$(build_tags_comma_sep)" \
@@ -82,10 +82,10 @@ endif
 all: install
 
 install: build
-	go install -mod=readonly $(BUILD_FLAGS) ./cmd/starsd
+	go install -mod=readonly $(BUILD_FLAGS) ./cmd/acarbd
 
 build:
-	go build $(BUILD_FLAGS) -o bin/starsd ./cmd/starsd
+	go build $(BUILD_FLAGS) -o bin/acarbd ./cmd/acarbd
 
 go.sum: go.mod
 	@echo "--> Ensure dependencies have not been modified"
@@ -99,17 +99,17 @@ lint:
 
 
 build-linux: 
-	CGO_ENABLED=0 GOARCH=amd64 GOOS=linux go build $(BUILD_FLAGS) -o bin/starsd github.com/public-awesome/stargaze/cmd/starsd
+	CGO_ENABLED=0 GOARCH=amd64 GOOS=linux go build $(BUILD_FLAGS) -o bin/acarbd github.com/Altered-Carbon-DAO/alteredcarbon-node/cmd/acarbd
 
 build-docker:
-	docker build -t publicawesome/stargaze:local-dev .
+	docker build -t publicawesome/alteredcarbon:local-dev .
 
 docker-test: build-linux
-	docker build -f docker/Dockerfile.test -t rocketprotocol/stargaze-relayer-test:latest .
+	docker build -f docker/Dockerfile.test -t rocketprotocol/alteredcarbon-relayer-test:latest .
 
 
 test:
-	go test -v -race github.com/public-awesome/stargaze/x/...
+	go test -v -race github.com/Altered-Carbon-DAO/alteredcarbon-node/x/...
 
 .PHONY: test build-linux docker-test lint build install
 
@@ -121,10 +121,10 @@ proto-gen:
 	go mod tidy
 
 ci-sign: 
-	drone sign public-awesome/stargaze --save
+	drone sign Altered-Carbon-DAO/alteredcarbon-node --save
 
 .PHONY: build-readiness-checker
 
 build-readiness-checker:
-	CGO_ENABLED=0 GOARCH=amd64 GOOS=linux go build -o bin/readiness-checker github.com/public-awesome/stargaze/testutil/readiness-checker
-	docker build -t publicawesome/stargaze-readiness-checker -f docker/Dockerfile.readiness .
+	CGO_ENABLED=0 GOARCH=amd64 GOOS=linux go build -o bin/readiness-checker github.com/Altered-Carbon-DAO/alteredcarbon-node/testutil/readiness-checker
+	docker build -t publicawesome/alteredcarbon-readiness-checker -f docker/Dockerfile.readiness .

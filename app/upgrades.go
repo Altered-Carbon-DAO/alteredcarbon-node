@@ -18,28 +18,28 @@ const upgradeName = "v2"
 func (app *App) RegisterUpgradeHandlers(cfg module.Configurator) {
 	app.UpgradeKeeper.SetUpgradeHandler(upgradeName, func(ctx sdk.Context, plan upgradetypes.Plan, vm module.VersionMap) (module.VersionMap, error) {
 		const (
-			HumanCoinUnit = "stars"
-			BaseCoinUnit  = "ustars"
-			StarsExponent = 6
+			HumanCoinUnit = "acarb"
+			BaseCoinUnit  = "uacarb"
+			acarbExponent = 6
 		)
 		denomMetadata := banktypes.Metadata{
-			Description: "The native token of Stargaze",
+			Description: "The native token of AlteredCarbon",
 			DenomUnits: []*banktypes.DenomUnit{
 				{
 					Denom:    BaseCoinUnit,
 					Exponent: 0,
-					Aliases:  []string{"microstars"},
+					Aliases:  []string{"microacarb"},
 				},
 				{
 					Denom:    HumanCoinUnit,
-					Exponent: StarsExponent,
+					Exponent: acarbExponent,
 					Aliases:  nil,
 				},
 			},
 			Base:    BaseCoinUnit,
 			Display: HumanCoinUnit,
-			Name:    "Stargaze STARS",
-			Symbol:  "STARS",
+			Name:    "AlteredCarbon acarb",
+			Symbol:  "acarb",
 		}
 
 		app.BankKeeper.SetDenomMetaData(ctx, denomMetadata)

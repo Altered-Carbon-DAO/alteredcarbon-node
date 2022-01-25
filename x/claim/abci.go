@@ -1,8 +1,8 @@
 package claim
 
 import (
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/claim/keeper"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/public-awesome/stargaze/v2/x/claim/keeper"
 )
 
 // EndBlocker called every block, process inflation, update validator set.
