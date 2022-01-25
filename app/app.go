@@ -90,8 +90,8 @@ import (
 	authzkeeper "github.com/cosmos/cosmos-sdk/x/authz/keeper"
 	authzmodule "github.com/cosmos/cosmos-sdk/x/authz/module"
 
-	"github.com/tendermint/spm/cosmoscmd"
-	"github.com/tendermint/spm/openapiconsole"
+	"github.com/tendermint/starport/starport/pkg/cosmoscmd"
+	"github.com/tendermint/starport/starport/pkg/openapiconsole"
 
 	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/docs"
 	allocmodule "github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/alloc"

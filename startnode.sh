@@ -43,8 +43,7 @@ jq '.app_state.crisis.constant_fee.denom = "blah"' $GENESIS > temp.json && mv te
 jq '.app_state.gov.min_deposit.denom = "blah"' $GENESIS > temp.json && mv temp.json $GENESIS
 jq '.app_state.mint.params.mint_denom = "blah"' $GENESIS > temp.json && mv temp.json $GENESIS
 
-
-modify config for development
+# modify config for development
 config="$HOME/.alteredcarbond/config/config.toml"
 if [ "$(uname)" = "Linux" ]; then
   sed -e "s/cors_allowed_origins = \[\]/cors_allowed_origins = [\"*\"]/g" $config
@@ -52,13 +51,13 @@ else
   sed -e '' "s/cors_allowed_origins = \[\]/cors_allowed_origins = [\"*\"]/g" $config
 fi
 
-
-
-
-
 alteredcarbond add-genesis-account $VALIDATOR 1000000000000uacarb
 alteredcarbond add-genesis-account $TREASURY 2500000000000000uacarb
-# TODO allocate coins to accounts
+
+# alteredcarbond add-genesis-account $FOUNDER1 2500000000000000uacarb
+# alteredcarbond add-genesis-account $FOUNDER2 250000000000000uacarb
+# alteredcarbond add-genesis-account $FOUNDER3 250000000000000uacarb
+# TODO allocate coins to FOUNDER4
 
 alteredcarbond prepare-genesis mainnet $CHAINID
 alteredcarbond gentx validator 10000000000uacarb --chain-id $CHAINID --keyring-backend test
