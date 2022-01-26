@@ -38,10 +38,10 @@ echo "Got FOUNDER4 $FOUNDER4"
 
 # setup chain
 alteredcarbond init $CHAINID --chain-id $CHAINID
-jq '.app_state.staking.params.bond_denom = "blah"' $GENESIS > temp.json && mv temp.json $GENESIS
-jq '.app_state.crisis.constant_fee.denom = "blah"' $GENESIS > temp.json && mv temp.json $GENESIS
-jq '.app_state.gov.min_deposit.denom = "blah"' $GENESIS > temp.json && mv temp.json $GENESIS
-jq '.app_state.mint.params.mint_denom = "blah"' $GENESIS > temp.json && mv temp.json $GENESIS
+jq '.app_state.staking.params.bond_denom = "uacarb"' $GENESIS > temp.json && mv temp.json $GENESIS
+jq '.app_state.crisis.constant_fee.denom = "uacarb"' $GENESIS > temp.json && mv temp.json $GENESIS
+jq '.app_state.gov.min_deposit.denom = "uacarb"' $GENESIS > temp.json && mv temp.json $GENESIS
+jq '.app_state.mint.params.mint_denom = "uacarb"' $GENESIS > temp.json && mv temp.json $GENESIS
 
 # modify config for development
 config="$HOME/.alteredcarbond/config/config.toml"

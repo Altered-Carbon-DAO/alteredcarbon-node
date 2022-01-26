@@ -3,8 +3,8 @@ package main
 import (
 	"os"
 
-	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/app"
-	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/cmd/acarbd/cmd"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/app"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/cmd/acarbd/cmd"
 	svrcmd "github.com/cosmos/cosmos-sdk/server/cmd"
 	"github.com/tendermint/spm/cosmoscmd"
 	tmcmds "github.com/tendermint/tendermint/cmd/tendermint/commands"
