@@ -1,7 +1,7 @@
 package claim
 
 import (
-	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/claim/keeper"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/x/claim/keeper"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 

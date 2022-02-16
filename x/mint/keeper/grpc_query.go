@@ -3,7 +3,7 @@ package keeper
 import (
 	"context"
 
-	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/mint/types"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/x/mint/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 

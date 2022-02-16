@@ -13,9 +13,9 @@ import (
 
 	abci "github.com/tendermint/tendermint/abci/types"
 
-	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/claim/client/cli"
-	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/claim/keeper"
-	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/claim/types"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/x/claim/client/cli"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/x/claim/keeper"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/x/claim/types"
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/codec"
 	cdctypes "github.com/cosmos/cosmos-sdk/codec/types"

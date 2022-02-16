@@ -4,9 +4,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/app"
-	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/testutil/simapp"
-	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/alloc/types"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/app"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/testutil/simapp"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/x/alloc/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	bankkeeper "github.com/cosmos/cosmos-sdk/x/bank/keeper"

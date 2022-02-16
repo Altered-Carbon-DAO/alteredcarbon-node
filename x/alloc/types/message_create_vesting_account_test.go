@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/testutil/sample"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/testutil/sample"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/stretchr/testify/require"

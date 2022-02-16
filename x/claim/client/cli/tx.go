@@ -8,7 +8,7 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/client"
 	// "github.com/cosmos/cosmos-sdk/client/flags"
-	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/claim/types"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/x/claim/types"
 )
 
 var (

@@ -1,7 +1,7 @@
 package keeper
 
 import (
-	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/claim/types"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/x/claim/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	govtypes "github.com/cosmos/cosmos-sdk/x/gov/types"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"

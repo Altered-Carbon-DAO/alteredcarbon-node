@@ -13,8 +13,8 @@ import (
 	"text/template"
 	"time"
 
-	claimtypes "github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/claim/types"
-	minttypes "github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/mint/types"
+	claimtypes "github.com/Altered-Carbon-DAO/alteredcarbon-node/x/claim/types"
+	minttypes "github.com/Altered-Carbon-DAO/alteredcarbon-node/x/mint/types"
 	"github.com/cosmos/cosmos-sdk/codec"
 	"github.com/cosmos/cosmos-sdk/testutil"
 	crisistypes "github.com/cosmos/cosmos-sdk/x/crisis/types"

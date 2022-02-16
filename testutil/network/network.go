@@ -18,7 +18,7 @@ import (
 	tmrand "github.com/tendermint/tendermint/libs/rand"
 	tmdb "github.com/tendermint/tm-db"
 
-	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/app"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/app"
 )
 
 type (

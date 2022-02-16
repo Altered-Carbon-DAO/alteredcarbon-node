@@ -8,7 +8,7 @@ apk add -U --no-cache jq tree
 STARGAZE_HOME=/alteredcarbon/acarbd
 acarbd config keyring-backend test --home $STARGAZE_HOME
 
-HEIGHT=$(acarbd status --node http://alteredcarbon:26657 --home $STARGAZE_HOME | jq .SyncInfo.latest_block_height -r)
+HEIGHT=$(acarbd status --node http://alteredcarbon:26657 --home $ACARB_HOME | jq .SyncInfo.latest_block_height -r)
 tree -L 2 /alteredcarbon/acarbd/
 echo "current height $HEIGHT"
 HEIGHT=$(expr $HEIGHT + 20) 

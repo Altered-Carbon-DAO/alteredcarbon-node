@@ -7,8 +7,8 @@ import (
 	"github.com/tendermint/tendermint/libs/log"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 
-	alteredcarbonapp "github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/app"
-	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/mint/types"
+	alteredcarbonapp "github.com/Altered-Carbon-DAO/alteredcarbon-node/app"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/x/mint/types"
 	"github.com/cosmos/cosmos-sdk/simapp"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	abci "github.com/tendermint/tendermint/abci/types"

@@ -5,7 +5,7 @@ import (
 
 	"github.com/tendermint/tendermint/libs/log"
 
-	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/alloc/types"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/x/alloc/types"
 	"github.com/cosmos/cosmos-sdk/codec"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"

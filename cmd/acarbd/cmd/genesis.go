@@ -19,7 +19,7 @@ import (
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	"github.com/cosmos/cosmos-sdk/x/genutil"
 
-	minttypes "github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/mint/types"
+	minttypes "github.com/Altered-Carbon-DAO/alteredcarbon-node/x/mint/types"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 	crisistypes "github.com/cosmos/cosmos-sdk/x/crisis/types"
 	distributiontypes "github.com/cosmos/cosmos-sdk/x/distribution/types"
@@ -29,7 +29,7 @@ import (
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 	ibctransfertypes "github.com/cosmos/ibc-go/v2/modules/apps/transfer/types"
 
-	claimtypes "github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/claim/types"
+	claimtypes "github.com/Altered-Carbon-DAO/alteredcarbon-node/x/claim/types"
 )
 
 const (
@@ -45,12 +45,6 @@ type Snapshot struct {
 }
 
 type SnapshotAccount struct {
-	AtomAddress                   string  `json:"atom_address"`
-	OsmoAddress                   string  `json:"osmo_address"`
-	RegenAddress                  string  `json:"regen_address"`
-	AlteredCarbonHubDelegator     bool    `json:"sg_hub_delegator"`
-	AlteredCarbonOsmosisDelegator bool    `json:"sg_osmosis_delegator"`
-	AlteredCarbonRegenDelegator   bool    `json:"sg_regen_delegator"`
 	AtomStaker                    bool    `json:"atom_staker"`
 	OsmoStaker                    bool    `json:"osmo_staker"`
 	OsmosisLiquidityProvider      bool    `json:"osmosis_lp"`
@@ -333,8 +327,8 @@ func PrepareGenesis(
 func MainnetGenesisParams() GenesisParams {
 	genParams := GenesisParams{}
 
-	genParams.AirdropSupply = sdk.NewInt(250_000_000_000_000) // 250M acarb
-	genParams.GenesisTime =  time.Date(2022, 01, 02, 17, 0, 0, 0, time.UTC) //
+	genParams.AirdropSupply = sdk.NewInt(250_000_000_000_000)              // 250M acarb
+	genParams.GenesisTime = time.Date(2022, 01, 02, 17, 0, 0, 0, time.UTC) //
 
 	genParams.NativeCoinMetadatas = []banktypes.Metadata{
 		{
@@ -351,7 +345,7 @@ func MainnetGenesisParams() GenesisParams {
 					Aliases:  nil,
 				},
 			},
-			Name:    "AlteredCarbon acarb",
+			Name:    "acarb",
 			Base:    BaseCoinUnit,
 			Display: HumanCoinUnit,
 			Symbol:  "acarb",

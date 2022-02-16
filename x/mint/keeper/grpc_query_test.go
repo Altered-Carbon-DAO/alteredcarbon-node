@@ -7,8 +7,8 @@ import (
 	"github.com/stretchr/testify/suite"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 
-	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/app"
-	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/mint/types"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/app"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/x/mint/types"
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )

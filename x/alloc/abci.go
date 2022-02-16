@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/alloc/keeper"
-	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/alloc/types"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/x/alloc/keeper"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/x/alloc/types"
 	"github.com/cosmos/cosmos-sdk/telemetry"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )

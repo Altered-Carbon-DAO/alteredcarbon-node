@@ -1,7 +1,7 @@
 package keeper_test
 
 import (
-	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/claim/types"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/x/claim/types"
 )
 
 func (s *KeeperTestSuite) TestExportGenesis() {

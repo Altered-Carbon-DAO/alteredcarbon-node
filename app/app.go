@@ -76,9 +76,9 @@ import (
 	ibchost "github.com/cosmos/ibc-go/v2/modules/core/24-host"
 	ibckeeper "github.com/cosmos/ibc-go/v2/modules/core/keeper"
 
-	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/mint"
-	mintkeeper "github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/mint/keeper"
-	minttypes "github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/mint/types"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/x/mint"
+	mintkeeper "github.com/Altered-Carbon-DAO/alteredcarbon-node/x/mint/keeper"
+	minttypes "github.com/Altered-Carbon-DAO/alteredcarbon-node/x/mint/types"
 	"github.com/spf13/cast"
 	abci "github.com/tendermint/tendermint/abci/types"
 	tmjson "github.com/tendermint/tendermint/libs/json"
@@ -93,13 +93,13 @@ import (
 	"github.com/tendermint/starport/starport/pkg/cosmoscmd"
 	"github.com/tendermint/starport/starport/pkg/openapiconsole"
 
-	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/docs"
-	allocmodule "github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/alloc"
-	allocmodulekeeper "github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/alloc/keeper"
-	allocmoduletypes "github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/alloc/types"
-	claimmodule "github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/claim"
-	claimmodulekeeper "github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/claim/keeper"
-	claimmoduletypes "github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/claim/types"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/docs"
+	allocmodule "github.com/Altered-Carbon-DAO/alteredcarbon-node/x/alloc"
+	allocmodulekeeper "github.com/Altered-Carbon-DAO/alteredcarbon-node/x/alloc/keeper"
+	allocmoduletypes "github.com/Altered-Carbon-DAO/alteredcarbon-node/x/alloc/types"
+	claimmodule "github.com/Altered-Carbon-DAO/alteredcarbon-node/x/claim"
+	claimmodulekeeper "github.com/Altered-Carbon-DAO/alteredcarbon-node/x/claim/keeper"
+	claimmoduletypes "github.com/Altered-Carbon-DAO/alteredcarbon-node/x/claim/types"
 	vestingtypes "github.com/cosmos/cosmos-sdk/x/auth/vesting/types"
 )
 

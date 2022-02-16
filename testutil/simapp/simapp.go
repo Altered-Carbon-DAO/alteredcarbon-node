@@ -12,7 +12,7 @@ import (
 	tmtypes "github.com/tendermint/tendermint/types"
 	tmdb "github.com/tendermint/tm-db"
 
-	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/app"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/app"
 )
 
 // New creates application instance with in-memory database and disabled logging.

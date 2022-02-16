@@ -5,7 +5,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/mint/types"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/x/mint/types"
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/flags"
 )

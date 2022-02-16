@@ -5,9 +5,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/testutil/simapp"
-	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/claim/keeper"
-	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/claim/types"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/testutil/simapp"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/x/claim/keeper"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/x/claim/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 )

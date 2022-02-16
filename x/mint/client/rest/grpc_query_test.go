@@ -14,7 +14,7 @@ import (
 	"github.com/gogo/protobuf/proto"
 	"github.com/stretchr/testify/suite"
 
-	minttypes "github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/mint/types"
+	minttypes "github.com/Altered-Carbon-DAO/alteredcarbon-node/x/mint/types"
 	"github.com/cosmos/cosmos-sdk/testutil/network"
 )
 

@@ -3,7 +3,7 @@ package app_test
 import (
 	"testing"
 
-	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/testutil/simapp"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/testutil/simapp"
 )
 
 func TestAnteHandler(t *testing.T) {

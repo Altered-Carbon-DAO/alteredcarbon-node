@@ -3,8 +3,8 @@ package mint
 import (
 	"time"
 
-	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/mint/keeper"
-	"github.com/Altered-Carbon-DAO/alteredcarbon-node/v2/x/mint/types"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/x/mint/keeper"
+	"github.com/Altered-Carbon-DAO/alteredcarbon-node/x/mint/types"
 	"github.com/cosmos/cosmos-sdk/telemetry"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
