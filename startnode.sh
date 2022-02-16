@@ -20,21 +20,21 @@ echo "Adding up founder2..."
 yes | acarbd keys add founder2
 echo "Adding up founder3..."
 yes | acarbd keys add founder3
-echo "Adding up founder4..."
-yes | acarbd keys add founder4
+# echo "Adding up founder4..."
+# yes | acarbd keys add founder4
 
 VALIDATOR=$(acarbd keys show validator -a)
 TREASURY=$(acarbd keys show treasury -a)
 FOUNDER1=$(acarbd keys show founder1 -a)
 FOUNDER2=$(acarbd keys show founder2 -a)
 FOUNDER3=$(acarbd keys show founder3 -a)
-FOUNDER4=$(acarbd keys show founder4 -a)
+# FOUNDER4=$(acarbd keys show founder4 -a)
 echo "Got VALIDATOR $VALIDATOR"
 echo "Got TREASURY $TREASURY"
 echo "Got FOUNDER1 $FOUNDER1"
 echo "Got FOUNDER2 $FOUNDER2"
 echo "Got FOUNDER3 $FOUNDER3"
-echo "Got FOUNDER4 $FOUNDER4"
+# echo "Got FOUNDER4 $FOUNDER4"
 
 # setup chain
 acarbd init $CHAINID --chain-id $CHAINID
@@ -52,11 +52,11 @@ jq '.app_state.mint.params.mint_denom = "uacarb"' $GENESIS > temp.json && mv tem
 # fi
 
 acarbd add-genesis-account $VALIDATOR 100000000000uacarb
-acarbd add-genesis-account $TREASURY 2500000000000000uacarb
-acarbd add-genesis-account $FOUNDER1 250000000000000uacarb
-acarbd add-genesis-account $FOUNDER2 250000000000000uacarb
-acarbd add-genesis-account $FOUNDER3 250000000000000uacarb
-acarbd add-genesis-account $FOUNDER4 250000000000000uacarb
+acarbd add-genesis-account $TREASURY 4499000000000000uacarb
+acarbd add-genesis-account $FOUNDER1 100000000000000uacarb
+acarbd add-genesis-account $FOUNDER2 100000000000000uacarb
+acarbd add-genesis-account $FOUNDER3 100000000000000uacarb
+# acarbd add-genesis-account $FOUNDER4 250000000000000uacarb
 
 acarbd prepare-genesis mainnet $CHAINID
 acarbd gentx validator 10000000000uacarb --chain-id $CHAINID --keyring-backend test

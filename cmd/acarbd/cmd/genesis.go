@@ -45,10 +45,14 @@ type Snapshot struct {
 }
 
 type SnapshotAccount struct {
-	AtomStaker                    bool    `json:"atom_staker"`
-	OsmoStaker                    bool    `json:"osmo_staker"`
-	OsmosisLiquidityProvider      bool    `json:"osmosis_lp"`
-	AirdropAmount                 sdk.Int `json:"airdrop_amount"`
+	AtomAddress              string  `json:"atom_address"`
+	OsmoAddress              string  `json:"osmo_address"`
+	RegenAddress             string  `json:"regen_address"`
+	AtomStaker               bool    `json:"atom_staker"`
+	OsmoStaker               bool    `json:"osmo_staker"`
+	RegenStaker              bool    `json:"regen_staker"`
+	OsmosisLiquidityProvider bool    `json:"osmosis_lp"`
+	AirdropAmount            sdk.Int `json:"airdrop_amount"`
 }
 
 type GenesisParams struct {

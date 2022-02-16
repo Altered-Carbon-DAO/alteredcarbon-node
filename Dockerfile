@@ -29,6 +29,7 @@ COPY --from=go-builder /code/bin/acarbd /usr/bin/acarbd
 RUN apk add -U --no-cache ca-certificates
 WORKDIR /data
 ENV HOME=/data
+# TODO: replace the entrypoint.sh files with the startnode.sh make sure it all ties up
 COPY ./docker/entry-point.sh ./entry-point.sh
 # rest server
 EXPOSE 1317

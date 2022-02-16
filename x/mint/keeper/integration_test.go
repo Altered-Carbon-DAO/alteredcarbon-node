@@ -3,7 +3,7 @@ package keeper_test
 import (
 	"encoding/json"
 
-	"github.com/tendermint/spm/cosmoscmd"
+	"github.com/tendermint/starport/starport/pkg/cosmoscmd"
 	"github.com/tendermint/tendermint/libs/log"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 
